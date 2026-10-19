@@ -27,6 +27,10 @@ npm run build
 npm start
 ```
 
+## Deploy on Render
+
+`render.yaml` defines the service. In Render, choose New > Blueprint, connect this repository, and enter `OPENAI_API_KEY` and `APP_PASSWORD` when prompted. The free plan sleeps after 15 minutes without traffic, so the first visit after a break takes about a minute to load.
+
 ## GitHub and website hosting
 
 Create a repository named `baloney-detector`, then add this folder's contents at its root. Do not upload `node_modules`, `.next`, or secret environment files.

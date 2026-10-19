@@ -1,0 +1,210 @@
+:root {
+  --pink: #F6D5D3;
+  --pink-deep: #EBB7B4;
+  --paper: #FFF8F6;
+  --casing: #B3202A;
+  --casing-dark: #7E141C;
+  --mustard: #F2C230;
+  --ink: #2E1A16;
+  --ink-soft: #5E433D;
+  --radius: 14px;
+  --display: "Shrikhand", Georgia, serif;
+  --body: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--pink);
+  color: var(--ink);
+  font: 18px/1.6 var(--body);
+}
+
+.masthead, main, footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* The slice: the app's one bold element. Becomes the baloney meter later. */
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+.slice {
+  flex: none;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--casing);
+  padding: 7px;
+  transform: rotate(-8deg);
+}
+.slice-meat {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 35%, #fff3 0 3px, transparent 4px),
+    radial-gradient(circle at 62% 58%, #fff3 0 2px, transparent 3px),
+    radial-gradient(circle at 45% 72%, #fff3 0 2px, transparent 3px),
+    var(--pink-deep);
+}
+h1 {
+  font: 400 2.3rem/1 var(--display);
+  color: var(--casing);
+  margin: 0;
+}
+.tagline {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+}
+
+.step {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 22px 20px 24px;
+  margin: 20px 0;
+}
+h2 {
+  font: 400 1.55rem/1.2 var(--display);
+  color: var(--casing-dark);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step-num {
+  font: 700 1rem/1 var(--body);
+  color: var(--paper);
+  background: var(--casing);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
+h3 { font-size: 1.1rem; margin: 0 0 6px; }
+p { margin: 0 0 14px; }
+
+textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--pink-deep);
+  border-radius: 10px;
+  padding: 12px;
+  resize: vertical;
+}
+textarea:focus { outline: none; border-color: var(--casing); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 16px;
+}
+.btn {
+  font: 700 1rem var(--body);
+  border: 0;
+  cursor: pointer;
+}
+.btn.primary {
+  background: var(--casing);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 999px;
+}
+.btn.primary:hover { background: var(--casing-dark); }
+.btn.link {
+  background: none;
+  color: var(--casing-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px 0;
+}
+:focus-visible { outline: 3px solid var(--mustard); outline-offset: 3px; }
+
+.error { color: var(--casing); font-weight: 700; font-size: 0.95rem; margin: 8px 0 0; }
+
+.source {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #fff;
+  border-left: 4px solid var(--pink-deep);
+  border-radius: 0;
+  max-height: 14em;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
+mark {
+  background: var(--mustard);
+  color: var(--ink);
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* Guess chips */
+.chips { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 2px solid var(--pink-deep);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.chip input:checked + span { background: var(--casing); border-color: var(--casing); color: #fff; }
+.chip input:focus-visible + span { outline: 3px solid var(--mustard); outline-offset: 2px; }
+
+/* Results */
+.score { font-weight: 700; font-size: 1.05rem; }
+.finding {
+  border-top: 2px dashed var(--pink-deep);
+  padding: 16px 0 4px;
+}
+.finding h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+.badge.spotted { background: #DCEFD8; color: #24511C; }
+.badge.missed { background: var(--mustard); color: var(--ink); }
+.badge.hunch { background: var(--pink); color: var(--casing-dark); }
+.finding .phrase { font-style: italic; color: var(--ink-soft); }
+.finding dl { margin: 8px 0 0; }
+.finding dt { font-weight: 700; font-size: 0.9rem; color: var(--casing-dark); margin-top: 10px; }
+.finding dd { margin: 2px 0 0; }
+
+.cant-check {
+  margin-top: 18px;
+  padding: 16px 18px;
+  background: var(--pink);
+  border-radius: 10px;
+}
+.cant-check ul { margin: 0; padding-left: 20px; }
+.cant-check li { margin-bottom: 6px; }
+
+footer { font-size: 0.85rem; color: var(--ink-soft); padding-bottom: 32px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .step:not([hidden]) { animation: rise 0.25s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+}

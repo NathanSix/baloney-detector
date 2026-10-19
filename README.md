@@ -22,7 +22,7 @@ npm test
 ## Roadmap
 
 1. Engine: flags and scanner (done)
-2. Screen: text box, guess-first step, results with lessons
+2. Screen: text box, guess-first step, results with lessons (done)
 3. Installable on phones and works offline (PWA on GitHub Pages)
 4. Fun layer: bologna-slice mascot and the red-ring baloney meter
 5. Practice mode with sample passages

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baloney Detector</title>
+  <meta name="description" content="Practice Carl Sagan's Baloney Detection Kit. Paste some text, make your call, then see what's worth a closer look.">
+  <meta name="theme-color" content="#B3202A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="slice" aria-hidden="true"><div class="slice-meat"></div></div>
+    <div>
+      <h1>Baloney Detector</h1>
+      <p class="tagline">Learn to smell it yourself.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="step-paste" class="step">
+      <h2><span class="step-num">1</span> Paste something</h2>
+      <p>A headline, a post, an ad, a paragraph from an article. Anything that's trying to convince you.</p>
+      <label for="input" class="visually-hidden">Text to check</label>
+      <textarea id="input" rows="7" placeholder="Paste text here"></textarea>
+      <p id="paste-error" class="error" role="alert" hidden></p>
+      <div class="actions">
+        <button id="to-guess" class="btn primary">Next: make your call</button>
+        <button id="use-example" class="btn link">Try an example</button>
+      </div>
+    </section>
+
+    <section id="step-guess" class="step" hidden>
+      <h2><span class="step-num">2</span> Your call first</h2>
+      <p>Before the detector weighs in, what looks fishy to you? Pick any that apply.</p>
+      <blockquote id="guess-text" class="source"></blockquote>
+      <fieldset class="chips" id="guess-chips">
+        <legend class="visually-hidden">Warning signs you spotted</legend>
+      </fieldset>
+      <p id="guess-error" class="error" role="alert" hidden></p>
+      <div class="actions">
+        <button id="to-reveal" class="btn primary">Show me what you missed</button>
+        <button id="back-to-paste" class="btn link">Change the text</button>
+      </div>
+    </section>
+
+    <section id="step-reveal" class="step" hidden>
+      <h2><span class="step-num">3</span> Worth a closer look</h2>
+      <p id="score" class="score"></p>
+      <blockquote id="marked-text" class="source"></blockquote>
+      <div id="results"></div>
+
+      <div class="cant-check">
+        <h3>What no detector can check for you</h3>
+        <p>The detector only reads wording. A calm, well-written falsehood can pass every check here. Before you believe or share it, go to the original source and ask:</p>
+        <ul>
+          <li>Has anyone independent confirmed this, or does it trace back to one source?</li>
+          <li>Who benefits if I believe it?</li>
+          <li>Are there other explanations that fit the facts just as well?</li>
+          <li>Does the full article actually say what the headline says?</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button id="start-over" class="btn primary">Check something else</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Based on the Baloney Detection Kit in Carl Sagan's <cite>The Demon-Haunted World</cite>. Runs entirely on your device. Nothing you paste leaves it.</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

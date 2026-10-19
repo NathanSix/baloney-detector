@@ -19,8 +19,8 @@ export const flags = [
     id: "cover-up",
     name: "Cover-up language",
     patterns: [
-      new RegExp(`they don${A}t want you to know`, "i"),
-      new RegExp(`what (the media|they|doctors|scientists) (won${A}t|don${A}t|aren${A}t going to) tell you`, "i"),
+      new RegExp(`(don${A}t|doesn${A}t) want you to (know|find out|see)`, "i"),
+      new RegExp(`(the media|they|doctors|scientists|the government) (won${A}t|don${A}t|aren${A}t going to) tell you`, "i"),
       /(hidden|suppressed|secret|banned) (truth|cure|evidence|study|research)/i,
     ],
     kitTool: "Can the claim be tested, and could it be shown false?",

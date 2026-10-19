@@ -23,8 +23,12 @@ npm test
 
 1. Engine: flags and scanner (done)
 2. Screen: text box, guess-first step, results with lessons (done)
-3. Installable on phones and works offline (PWA on GitHub Pages)
+3. Installable on phones and works offline (PWA on GitHub Pages) (done)
 4. Fun layer: bologna-slice mascot and the red-ring baloney meter
 5. Practice mode with sample passages
 
 The earlier OpenAI-based version is kept on the `archive/openai-version` branch.
+
+## Updating the live app
+
+The app works offline by saving a copy of its files on each phone. After changing any file, bump `VERSION` in `sw.js` (v1 to v2, and so on) so phones fetch the new copy.

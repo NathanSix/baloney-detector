@@ -135,6 +135,11 @@ $("to-reveal").addEventListener("click", () => {
   show("reveal");
 });
 
+// Offline support (only works over https or localhost)
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
+
 $("start-over").addEventListener("click", () => {
   $("input").value = "";
   show("paste");
